@@ -1,15 +1,23 @@
 {
-    "name": "React Chrome Extension",
-    "version": "1.0.0",
+    "name": "Audio Record",
+    "version": "0.1",
     "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "tabCapture",
+        "desktopCapture"
+    ],
+    "host_permissions": [
+        "https://*/"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "content_scripts": [
         {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "content.js"
-            ]
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
         }
     ]
 }
